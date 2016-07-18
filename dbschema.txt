@@ -1,0 +1,22 @@
+#delete before public... seriously bro... do it
+
+
+######SQL Setup####
+listOfThreads(tbl)
+opId(int)
+lastReplyTime(int)
+
+
+postList(tbl)
+postId(int)(primary)
+opId(int)
+postTime(int)
+postText(text)
+fileLink(text)
+userSubmitted(text)
+
+
+
+
+	 SELECT b.postId, b.opId, b.postTime, b.postText, b.fileLink, b.userSubmitted, a.opId, a.lastReplyTime FROM postList b, listOfThreads a WHERE a.opId = b.postId ORDER BY a.lastReplyTime DESC;
+
